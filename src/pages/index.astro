@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home" description="Expert baby gear reviews, comparisons, and buying guides for new parents.">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary-600 to-secondary-600 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+        The Baby Gear You Actually Need
+      </h1>
+      <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+        Honest reviews, head-to-head comparisons, and expert buying guides — so you can spend less time researching and more time with your little one.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/blog"
+          class="bg-white text-primary-700 font-semibold px-8 py-3 rounded-full hover:bg-neutral-100 no-underline"
+        >
+          Read Reviews
+        </a>
+        <a
+          href="/registry"
+          class="bg-accent-500 text-white font-semibold px-8 py-3 rounded-full hover:bg-accent-600 no-underline"
+        >
+          Build Your Registry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h2 class="text-2xl font-bold text-secondary-600 mb-8 text-center">Shop by Category</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {[
+        { name: 'Strollers', icon: '🚼', href: '/strollers' },
+        { name: 'Car Seats', icon: '🚗', href: '/car-seats' },
+        { name: 'Cribs', icon: '🛏️', href: '/cribs' },
+        { name: 'Monitors', icon: '📡', href: '/monitors' },
+        { name: 'Feeding', icon: '🍼', href: '/feeding' },
+        { name: 'Carriers', icon: '👶', href: '/carriers' },
+        { name: 'Diaper Bags', icon: '👜', href: '/diaper-bags' },
+        { name: 'Travel', icon: '✈️', href: '/travel' },
+      ].map(({ name, icon, href }) => (
+        <a
+          href={href}
+          class="flex flex-col items-center gap-3 bg-white border border-neutral-200 rounded-2xl p-6 hover:border-primary-400 hover:shadow-md transition-all no-underline text-neutral-800"
+        >
+          <span class="text-3xl">{icon}</span>
+          <span class="font-semibold text-sm">{name}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Affiliate disclosure notice -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+    <p class="text-xs text-neutral-400 text-center">
+      This site contains affiliate links. We may earn a commission when you purchase through our links, at no additional cost to you.
+    </p>
+  </div>
+</BaseLayout>

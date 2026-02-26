@@ -1,0 +1,105 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = 'Expert baby gear reviews, comparisons, and buying guides for new parents.',
+  image = '/og-default.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title} | Gear for Little</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | Gear for Little`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Gear for Little`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="bg-white border-b border-neutral-200 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="/" class="flex items-center gap-2 no-underline">
+            <span class="text-2xl font-bold text-primary-600">Gear for Little</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="/blog" class="text-neutral-600 hover:text-primary-600 no-underline">Blog</a>
+            <a href="/products" class="text-neutral-600 hover:text-primary-600 no-underline">Products</a>
+            <a href="/comparisons" class="text-neutral-600 hover:text-primary-600 no-underline">Compare</a>
+            <a
+              href="/registry"
+              class="bg-accent-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-accent-600 no-underline"
+            >
+              Registry Guide
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="bg-secondary-900 text-neutral-300 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-white font-bold text-lg mb-3">Gear for Little</h3>
+            <p class="text-sm leading-relaxed">
+              Honest, research-backed baby gear reviews for parents who want the best for their little ones.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-3">Categories</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/strollers" class="hover:text-white no-underline">Strollers</a></li>
+              <li><a href="/car-seats" class="hover:text-white no-underline">Car Seats</a></li>
+              <li><a href="/cribs" class="hover:text-white no-underline">Cribs</a></li>
+              <li><a href="/monitors" class="hover:text-white no-underline">Monitors</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-3">Legal</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/affiliate-disclosure" class="hover:text-white no-underline">Affiliate Disclosure</a></li>
+              <li><a href="/privacy" class="hover:text-white no-underline">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-neutral-700 mt-8 pt-8 text-xs text-center">
+          <p>
+            &copy; {new Date().getFullYear()} Gear for Little. Some links are affiliate links — we may earn a commission at no extra cost to you.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
