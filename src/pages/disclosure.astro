@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const lastUpdated = 'January 2025';
+---
+
+<BaseLayout
+  title="Affiliate Disclosure"
+  description="GearForLittle participates in affiliate programs. Here's exactly how that works, and why it doesn't affect our ratings or recommendations."
+>
+
+  <div class="bg-neutral-50 border-b border-neutral-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <nav class="text-xs text-neutral-400 mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-neutral-600 no-underline">Home</a>
+        <span class="mx-2">/</span>
+        <span>Affiliate Disclosure</span>
+      </nav>
+      <h1 class="text-4xl font-bold text-neutral-900 mb-4">Affiliate Disclosure</h1>
+      <p class="text-sm text-neutral-400">Last updated: {lastUpdated}</p>
+    </div>
+  </div>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+
+    <!-- FTC summary box -->
+    <div class="bg-accent-50 border border-accent-200 rounded-2xl p-6">
+      <h2 class="font-bold text-accent-900 mb-2 flex items-center gap-2">
+        <span>⚠️</span> Summary (plain English)
+      </h2>
+      <p class="text-accent-800 text-sm leading-relaxed">
+        GearForLittle uses affiliate links. When you click a link and buy a product, we may earn a small commission — at <strong>no additional cost to you</strong>. This income helps keep the site running. It does <strong>not</strong> influence which products we recommend or how we rate them.
+      </p>
+    </div>
+
+    <!-- Full disclosure -->
+    <section class="space-y-6 text-neutral-600 leading-relaxed">
+      <div>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">What Is an Affiliate Link?</h2>
+        <p>
+          An affiliate link is a tracked URL that tells a retailer (like Amazon) that you arrived via GearForLittle. If you purchase anything during that session, we earn a small commission — typically 1–8% depending on the product category and retailer.
+        </p>
+        <p class="mt-3">
+          The price you pay is <strong>exactly the same</strong> whether you use our link or navigate to the retailer directly. You never pay more.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">Amazon Associates Disclosure</h2>
+        <p>
+          GearForLittle is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
+        </p>
+        <p class="mt-3 font-medium text-neutral-800">
+          As an Amazon Associate, I earn from qualifying purchases.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">Other Affiliate Programs</h2>
+        <p>
+          In addition to Amazon, GearForLittle may participate in affiliate programs with other retailers including (but not limited to) Buy Buy Baby, Target, Walmart, and brand-direct programs. All are subject to the same disclosure.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">Does This Affect Our Recommendations?</h2>
+        <p>
+          No. Our ratings and recommendations are based entirely on product performance as observed during testing — not on commission rates.
+        </p>
+        <p class="mt-3">
+          In fact, some of the products we rate highest have lower commission rates than products we've rated poorly. Affiliate income is a result of useful recommendations, not the other way around.
+        </p>
+        <p class="mt-3">
+          We do not accept payment to feature, review, or rank products. We do not accept free products from manufacturers or PR agencies.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">FTC Compliance</h2>
+        <p>
+          This disclosure is made in accordance with the Federal Trade Commission's 16 CFR Part 255: "Guides Concerning the Use of Endorsements and Testimonials in Advertising." We believe in full transparency about how this site operates and how it earns revenue.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">How to Identify Affiliate Links</h2>
+        <p>
+          Posts that contain affiliate links include a disclosure notice at the top of the article. Affiliate links may also be identified by the "affiliateDisclosure" flag. When in doubt, assume that any product link may be an affiliate link — we prefer to over-disclose rather than under-disclose.
+        </p>
+      </div>
+
+      <div class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
+        <h2 class="text-lg font-bold text-neutral-900 mb-2">Questions?</h2>
+        <p class="text-sm">
+          If you have questions about our affiliate relationships or anything in this disclosure, please email{' '}
+          <a href="mailto:hello@gearforlittle.com" class="text-primary-600 hover:underline">hello@gearforlittle.com</a>.
+        </p>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

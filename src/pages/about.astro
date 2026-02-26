@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="I'm an engineer and dad who got frustrated with vague baby gear reviews. So I started testing everything myself. Here's why I built GearForLittle."
+>
+
+  <!-- Page header -->
+  <div class="bg-neutral-50 border-b border-neutral-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <nav class="text-xs text-neutral-400 mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-neutral-600 no-underline">Home</a>
+        <span class="mx-2">/</span>
+        <span>About</span>
+      </nav>
+      <h1 class="text-4xl font-bold text-neutral-900 mb-4">About GearForLittle</h1>
+      <p class="text-lg text-neutral-600 leading-relaxed">
+        An engineer dad, a lot of spreadsheets, and a genuine hatred of vague product reviews.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+    <!-- Intro with photo -->
+    <section class="flex flex-col md:flex-row gap-10 items-start">
+      <!-- Photo placeholder -->
+      <div class="flex-shrink-0">
+        <div class="w-36 h-36 rounded-2xl bg-neutral-200 flex items-center justify-center text-neutral-400 font-medium text-sm">
+          Photo
+        </div>
+      </div>
+      <!-- Text -->
+      <div>
+        <h2 class="text-2xl font-bold text-neutral-900 mb-4">Hey, I'm [Your Name]</h2>
+        <p class="text-neutral-600 leading-relaxed mb-4">
+          I'm a software engineer and a dad to [child's name], born in [year]. When my partner and I started building our registry, I did what engineers do: I opened a spreadsheet and started researching.
+        </p>
+        <p class="text-neutral-600 leading-relaxed">
+          Six weeks later, I had 40 tabs open, three conflicting "best of" lists, and zero confidence in any of them. Every review site I found was either recycling manufacturer specs or clearly optimizing for affiliate clicks over honesty.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why I Started This Site -->
+    <section>
+      <h2 class="text-2xl font-bold text-neutral-900 mb-5">Why I Started This Site</h2>
+      <div class="prose prose-neutral max-w-none">
+        <p class="text-neutral-600 leading-relaxed mb-4">
+          The baby gear industry is a mess. Products are marketed with vague claims ("ultra-lightweight!" "easy to fold!"), prices are all over the place, and most review sites are ranking products by affiliate commission, not actual quality.
+        </p>
+        <p class="text-neutral-600 leading-relaxed mb-4">
+          I bought the gear anyway, figured it out the hard way, and kept notes on all of it. After a year of parenting and testing, I had enough real-world data to actually be useful. So I built this site.
+        </p>
+        <p class="text-neutral-600 leading-relaxed">
+          GearForLittle is what I wish had existed when I was frantically Googling at 11pm. It's not trying to be everything to everyone. It's just one dad's thorough, honest take on the gear that actually matters.
+        </p>
+      </div>
+    </section>
+
+    <!-- How I'm Different -->
+    <section>
+      <h2 class="text-2xl font-bold text-neutral-900 mb-6">How I'm Different</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {[
+          {
+            icon: '📊',
+            title: 'I think in systems',
+            body: 'Every review comes with a structured breakdown. Safety, ease of use, value, durability, and dad-friendliness — each scored separately so you can see exactly what you\'re trading off.',
+          },
+          {
+            icon: '🛒',
+            title: 'I actually buy the products',
+            body: 'No PR samples. No gifted gear. I spend my own money (or borrow from other parents) so that my incentives are aligned with yours.',
+          },
+          {
+            icon: '⏱️',
+            title: 'Long-term testing',
+            body: 'I use products for weeks or months before writing anything. That stroller you\'re eyeing? I\'ve folded it 200 times. That car seat? I\'ve installed it in three different cars.',
+          },
+          {
+            icon: '🎯',
+            title: 'Dad perspective',
+            body: 'Most baby gear is marketed to moms. I write for dads too — about carrier fit for broad shoulders, one-hand stroller folds, and whether something is genuinely intuitive or just "read the manual" intuitive.',
+          },
+        ].map(({ icon, title, body }) => (
+          <div class="bg-neutral-50 rounded-2xl p-6 border border-neutral-200">
+            <div class="text-2xl mb-3">{icon}</div>
+            <h3 class="font-bold text-neutral-900 mb-2">{title}</h3>
+            <p class="text-neutral-600 text-sm leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- E-E-A-T: Credentials -->
+    <section class="bg-secondary-900 text-white rounded-2xl p-8">
+      <h2 class="text-xl font-bold mb-5 text-white">Credentials &amp; Experience</h2>
+      <ul class="space-y-3">
+        {[
+          'Software engineer with [X] years of experience in product development',
+          'Parent to [child\'s age] child — actively using and testing baby gear every day',
+          'Reviewed [X+] baby products across [X] categories since [year]',
+          'No brand partnerships, sponsorships, or free products accepted',
+          'Active member of parenting communities and product research forums',
+          'Read hundreds of JPMA and NHTSA safety reports for car seat coverage',
+        ].map((item) => (
+          <li class="flex items-start gap-3 text-sm text-neutral-300">
+            <svg class="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="text-center border border-neutral-200 rounded-2xl p-8">
+      <h2 class="text-xl font-bold text-neutral-900 mb-3">Got a Question or Product Suggestion?</h2>
+      <p class="text-neutral-500 text-sm leading-relaxed mb-5">
+        I read every email. If there's a product you want me to test, or something you think I got wrong, reach out.
+      </p>
+      <a
+        href="mailto:hello@gearforlittle.com"
+        class="inline-flex items-center gap-2 bg-primary-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-primary-700 transition-colors no-underline text-sm"
+      >
+        hello@gearforlittle.com
+      </a>
+      <div class="mt-6 pt-6 border-t border-neutral-100">
+        <p class="text-xs text-neutral-400">
+          See exactly how every product is evaluated on the{' '}
+          <a href="/how-we-test" class="text-primary-600 hover:underline">How We Test</a> page.
+        </p>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

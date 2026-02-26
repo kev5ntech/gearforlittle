@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const lastUpdated = 'January 2025';
+const siteEmail = 'hello@gearforlittle.com';
+const siteName = 'GearForLittle';
+const siteURL = 'https://gearforlittle.com';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="GearForLittle's privacy policy. How we collect, use, and protect your data."
+>
+
+  <div class="bg-neutral-50 border-b border-neutral-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <nav class="text-xs text-neutral-400 mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-neutral-600 no-underline">Home</a>
+        <span class="mx-2">/</span>
+        <span>Privacy Policy</span>
+      </nav>
+      <h1 class="text-4xl font-bold text-neutral-900 mb-4">Privacy Policy</h1>
+      <p class="text-sm text-neutral-400">Last updated: {lastUpdated}</p>
+    </div>
+  </div>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="space-y-10 text-neutral-600 leading-relaxed">
+
+      <section>
+        <p>
+          {siteName} ("{siteName}", "we", "us", or "our") operates {siteURL}. This page informs you of our policies regarding the collection, use, and disclosure of personal information when you use our site, and the choices you have associated with that data.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">1. Information We Collect</h2>
+        <h3 class="font-semibold text-neutral-800 mb-2">Information you provide directly</h3>
+        <p class="mb-4">
+          If you sign up for our email newsletter, we collect your email address. We use this solely to send you the content you requested. We do not sell or share your email address with third parties.
+        </p>
+        <h3 class="font-semibold text-neutral-800 mb-2">Information collected automatically</h3>
+        <p>
+          Like most websites, we automatically collect certain information when you visit, including: IP address, browser type, operating system, referring URLs, pages visited, and time spent on pages. This information is collected through analytics tools (see Cookies section below).
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">2. Cookies</h2>
+        <p class="mb-4">
+          We use cookies and similar tracking technologies to analyze traffic and improve your experience. These include:
+        </p>
+        <ul class="space-y-3">
+          {[
+            {
+              name: 'Analytics cookies',
+              desc: 'We use Google Analytics to understand how visitors interact with the site. This data is aggregated and anonymized. You can opt out of Google Analytics tracking by using the Google Analytics Opt-out Browser Add-on.',
+            },
+            {
+              name: 'Affiliate tracking cookies',
+              desc: 'When you click an affiliate link, the retailer (e.g., Amazon) sets a cookie to track whether you make a purchase. This is how we earn commissions. See our Affiliate Disclosure for more detail.',
+            },
+            {
+              name: 'Essential cookies',
+              desc: 'Basic cookies necessary for the site to function, such as session management. These cannot be disabled.',
+            },
+          ].map(({ name, desc }) => (
+            <li class="pl-4 border-l-2 border-neutral-200">
+              <p class="font-semibold text-neutral-800 text-sm mb-1">{name}</p>
+              <p class="text-sm">{desc}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">3. How We Use Your Information</h2>
+        <ul class="space-y-2 text-sm">
+          {[
+            'To operate and improve the website',
+            'To send the email newsletter you signed up for',
+            'To analyze traffic patterns and understand what content is most useful',
+            'To comply with legal obligations',
+          ].map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">4. Third-Party Services</h2>
+        <p class="mb-4">We use the following third-party services that may collect data according to their own privacy policies:</p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-neutral-50">
+                <th class="text-left p-3 border border-neutral-200 font-semibold text-neutral-900">Service</th>
+                <th class="text-left p-3 border border-neutral-200 font-semibold text-neutral-900">Purpose</th>
+                <th class="text-left p-3 border border-neutral-200 font-semibold text-neutral-900">Privacy Policy</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { service: 'Google Analytics', purpose: 'Website analytics', policy: 'https://policies.google.com/privacy' },
+                { service: 'Amazon Associates', purpose: 'Affiliate tracking', policy: 'https://www.amazon.com/gp/help/customer/display.html?nodeId=468496' },
+                { service: 'Email service provider', purpose: 'Newsletter delivery', policy: '#' },
+              ].map(({ service, purpose, policy }) => (
+                <tr class="hover:bg-neutral-50">
+                  <td class="p-3 border border-neutral-200">{service}</td>
+                  <td class="p-3 border border-neutral-200">{purpose}</td>
+                  <td class="p-3 border border-neutral-200">
+                    <a href={policy} class="text-primary-600 hover:underline text-xs" target="_blank" rel="noopener noreferrer">View policy ↗</a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">5. Data Retention &amp; Security</h2>
+        <p>
+          Email addresses collected for our newsletter are retained until you unsubscribe. Analytics data is retained per the default Google Analytics retention policy (26 months). We implement standard security measures, but no internet transmission is 100% secure.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">6. Your Rights</h2>
+        <p class="mb-4">Depending on your location, you may have the right to:</p>
+        <ul class="space-y-2 text-sm">
+          {[
+            'Access the personal information we hold about you',
+            'Request correction of inaccurate data',
+            'Request deletion of your data',
+            'Opt out of email communications at any time (unsubscribe link in every email)',
+            'Opt out of Google Analytics tracking via their opt-out tool',
+          ].map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">7. Children's Privacy</h2>
+        <p>
+          This site is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us and we will delete it promptly.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-bold text-neutral-900 mb-3">8. Changes to This Policy</h2>
+        <p>
+          We may update this privacy policy from time to time. Changes will be reflected in the "Last updated" date at the top of this page. Continued use of the site after changes constitutes acceptance of the updated policy.
+        </p>
+      </section>
+
+      <section class="bg-neutral-50 border border-neutral-200 rounded-2xl p-6">
+        <h2 class="text-lg font-bold text-neutral-900 mb-2">9. Contact Us</h2>
+        <p class="text-sm">
+          For privacy-related questions or to exercise your data rights, email us at{' '}
+          <a href={`mailto:${siteEmail}`} class="text-primary-600 hover:underline">{siteEmail}</a>.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
